@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071b14">
+  <title>Nigeria 2027 Presidential Poll</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Nigeria 2027 poll home"><span class="brand-mark">N</span><span>Nigeria <b>2027</b></span></a>
+    <a class="admin-link" href="#admin">Admin <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow"><span class="live-dot"></span> PUBLIC OPINION POLL</div>
+      <h1 id="pollTitle">Nigeria 2027<br><em>Presidential Poll</em></h1>
+      <p id="pollDescription">Share your opinion. See how the public poll changes in real time.</p>
+      <div class="hero-stats">
+        <div><strong id="totalVotes">0</strong><span>Votes submitted</span></div>
+        <div><strong><span class="live-dot"></span> Live</strong><span>Refreshes automatically</span></div>
+      </div>
+    </section>
+
+    <section class="poll-card" aria-labelledby="question">
+      <div class="section-head">
+        <div><span class="step">YOUR VOICE</span><h2 id="question">Who would you vote for?</h2></div>
+        <span class="badge">2027</span>
+      </div>
+      <p class="muted">Choose one option. Results are based only on votes submitted to this demo poll.</p>
+      <div id="candidateList" class="candidate-list" aria-live="polite"></div>
+      <button id="voteButton" class="primary-btn" disabled>Choose a candidate</button>
+      <p id="voteMessage" class="message" role="status"></p>
+      <div class="poll-foot"><span>◉ One vote per browser</span><span id="updatedAt">Loading results…</span></div>
+    </section>
+
+    <section class="info-grid">
+      <article class="info-card"><div class="info-icon">↗</div><h3>Live results</h3><p>Percentages and vote totals refresh automatically while the poll is open.</p></article>
+      <article class="info-card"><div class="info-icon">▣</div><h3>Mobile friendly</h3><p>A clean layout designed for phones, tablets, and desktop screens.</p></article>
+      <article class="info-card"><div class="info-icon">✓</div><h3>Public opinion only</h3><p>This is an unofficial poll, not a ballot, election result, or scientific survey.</p></article>
+    </section>
+
+    <section id="admin" class="admin-card">
+      <div class="section-head"><div><span class="step">POLL MANAGEMENT</span><h2>Admin dashboard</h2></div><span class="badge badge-dark">PRIVATE</span></div>
+      <p class="muted">Enter your admin token to view totals, update the poll title, or reset demo votes.</p>
+      <form id="adminLogin" class="admin-login">
+        <label for="adminToken">Admin token</label>
+        <div class="token-row"><input id="adminToken" type="password" autocomplete="current-password" placeholder="Enter admin token" required><button class="secondary-btn" type="submit">Open dashboard</button></div>
+      </form>
+      <p id="adminMessage" class="message" role="status"></p>
+      <div id="adminPanel" hidden>
+        <div class="admin-metrics"><div><span>Total votes</span><strong id="adminTotal">0</strong></div><div><span>Leading option</span><strong id="adminLeader">—</strong></div></div>
+        <form id="settingsForm" class="settings-form">
+          <label for="settingTitle">Poll title</label><input id="settingTitle" maxlength="100" required>
+          <label for="settingDescription">Description</label><textarea id="settingDescription" maxlength="240" rows="2"></textarea>
+          <button class="secondary-btn" type="submit">Save poll details</button>
+        </form>
+        <h3 class="recent-title">Current results</h3><div id="adminResults"></div>
+        <button id="resetButton" class="danger-btn" type="button">Reset all demo votes</button>
+        <p class="small-note">Reset is permanent for this local data file. Use only for test data.</p>
+      </div>
+    </section>
+    <footer><span class="brand-mark small">N</span><span>Independent public opinion poll demo</span><a href="#question">Back to poll ↑</a></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
